@@ -14,7 +14,7 @@ import '../assets/mapbox-gl.css';
 
 // <!-- Theme CSS -->
 import '../assets/css/theme.min.css';
-function Main_Page() {
+function SignUp() {
   return (
     <section class="section-border border-primary">
       <div class="container d-flex flex-column">
@@ -109,4 +109,4 @@ function Main_Page() {
   );
 }
 
-export default Main_Page;
+export default SignUp;

@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Main_Page from './Main_Page';
+import SignUp from './SignUp';
 function App() {
-  return <Main_Page />;
+  return <SignUp />;
 }
 
 export default App;
