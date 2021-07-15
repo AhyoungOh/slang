@@ -1,7 +1,6 @@
 import './style.scss';
 
 function Button() {
-  console.log('Hi');
   return (
     <div className='div'>
       <button className='button'>Sign Up</button>
