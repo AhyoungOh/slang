@@ -1,19 +1,19 @@
 import './style.scss';
-import '../../assets/fonts/Feather/feather.css';
-import '../../assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css';
-import '../../assets/libs/aos/dist/aos.css';
-import '../../assets/libs/choices.js/public/assets/styles/choices.min.css';
-import '../../assets/libs/flickity-fade/flickity-fade.css';
-import '../../assets/libs/flickity/dist/flickity.min.css';
-import '../../assets/libs/highlightjs/styles/vs2015.css';
-import '../../assets/libs/jarallax/dist/jarallax.css';
-import '../../assets/libs/quill/dist/quill.core.css';
-import '../../assets/mapbox-gl.css';
+// import '../../assets/fonts/Feather/feather.css';
+// import '../../assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+// import '../../assets/libs/aos/dist/aos.css';
+// import '../../assets/libs/choices.js/public/assets/styles/choices.min.css';
+// import '../../assets/libs/flickity-fade/flickity-fade.css';
+// import '../../assets/libs/flickity/dist/flickity.min.css';
+// import '../../assets/libs/highlightjs/styles/vs2015.css';
+// import '../../assets/libs/jarallax/dist/jarallax.css';
+// import '../../assets/libs/quill/dist/quill.core.css';
+// import '../../assets/mapbox-gl.css';
 // <!-- Map -->
 // <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
 // <!-- Theme CSS -->
-import '../../assets/css/theme.min.css';
+// import '../../assets/css/theme.min.css';
 
 import { useRef, useContext, useState } from 'react';
 import axios from 'axios';
