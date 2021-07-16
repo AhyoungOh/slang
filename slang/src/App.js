@@ -6,6 +6,7 @@ import SignUp from './SignUp';
 import SignInPage from './pages/SignIn';
 import ListPage from './pages/List';
 import ButtonPage from './pages/Button';
+import UploadSlangDictPage from './pages/UploadSlangDict';
 import './styles/global-style.scss';
 
 function App() {
@@ -22,8 +23,12 @@ function App() {
         <Route path="/list">
           <ListPage />
         </Route>
+        <Route path="/creator_login">
+          <UploadSlangDictPage />
+        </Route>
       </Switch>
     </Router>
+    // <InputMeaningSlang />
   );
 }
 
