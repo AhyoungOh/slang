@@ -12,6 +12,9 @@ function Button() {
       <Link to="/list">
         <button className="button">Go to List</button>
       </Link>
+      <Link to="/creator_login">
+        <button className="button">Upload Slang Dictionary</button>
+      </Link>
     </div>
   );
 }
