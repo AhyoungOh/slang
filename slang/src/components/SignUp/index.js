@@ -26,8 +26,8 @@ function SignUp() {
   const usernameRef = useRef('');
   const passwordRef = useRef('');
   const emailRef = useRef('');
-  const creator_groupRef = useRef('');
-  const user_groupRef = useRef('');
+  const creatorGroupRef = useRef('');
+  const userGroupRef = useRef('');
   const idRef = useRef('');
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -39,8 +39,8 @@ function SignUp() {
           username: usernameRef.current.value,
           password: passwordRef.current.value,
           email: emailRef.current.value,
-          creator_group: creator_groupRef.current.value,
-          user_group: user_groupRef.current.value,
+          creatorGroup: creatorGroupRef.current.value,
+          userGroup: userGroupRef.current.value,
           id: idRef.current.value,
         }
       );
@@ -91,7 +91,7 @@ function SignUp() {
                 type="checkbox"
                 value=""
                 id="creator_group"
-                ref={creator_groupRef}
+                ref={creatorGroupRef}
               />
               <label class="form-check-label" for="creator_group">
                 Are you a creator group?
@@ -104,7 +104,7 @@ function SignUp() {
                 type="checkbox"
                 value=""
                 id="user_group"
-                ref={user_groupRef}
+                ref={userGroupRef}
               />
               <label class="form-check-label" for="user_group">
                 Are you a user group?

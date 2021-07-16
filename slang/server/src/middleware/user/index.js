@@ -46,8 +46,8 @@ router.post('/', async (req, res) => {
     !req.body.email ||
     !req.body.username ||
     !req.body.password ||
-    !req.body.creator_group ||
-    !req.body.user_group
+    !req.body.creatorGroup ||
+    !req.body.userGroup
   )
     return res.status(400).send({
       message: 'infos are required',
@@ -66,8 +66,8 @@ router.post('/', async (req, res) => {
       password: req.body.password,
       id: req.body.id,
       email: req.body.email,
-      creator_group: req.body.creator_group,
-      user_group: req.body.user_group,
+      creatorGroup: req.body.creatorGroup,
+      userGroup: req.body.userGroup,
     });
     await user.save();
 

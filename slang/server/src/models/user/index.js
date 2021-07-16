@@ -4,8 +4,8 @@ const argon2 = require('argon2');
 const userSchema = new Schema({
   username: String,
   email: String,
-  creator_group: Boolean,
-  user_group: Boolean,
+  creatorGroup: Boolean,
+  userGroup: Boolean,
   id: String,
   password: String,
 });
