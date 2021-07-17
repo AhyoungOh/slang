@@ -1,11 +1,11 @@
 import './style.scss';
+import React from 'react';
 
 function SignIn() {
   return (
     <div className='login-page'>
       <form>
         <div class='mb-3'>
-          {/* margin-bottom 3 */}
           <label for='exampleInputEmail1' class='form-label'>
             Email address
           </label>

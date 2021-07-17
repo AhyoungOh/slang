@@ -2,11 +2,6 @@ import './style.scss';
 import React, { useState } from 'react';
 
 function List() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     <>
       <div className='slang-list'>
@@ -20,7 +15,12 @@ function List() {
             Slang1
           </button>
 
-          <button class='btn btn-primary' type='button' onClick={handleShow}>
+          <button
+            class='btn btn-success'
+            type='button'
+            data-bs-toggle='modal'
+            data-bs-target='#exampleModal'
+          >
             Slang2
           </button>
         </div>
@@ -54,20 +54,6 @@ function List() {
             </div>
           </div>
         </div>
-        {/* <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Slang</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Slang Meaning</Modal.Body>
-          <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant='primary' onClick={handleClose}>
-              Check
-            </Button>
-          </Modal.Footer>
-        </Modal> */}
       </div>
     </>
   );
