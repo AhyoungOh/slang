@@ -16,20 +16,20 @@ function InputMeaningSlang() {
     });
   };
   return (
-    <div className="login-page">
+    <div className='login-page'>
       <Form>
-        <Form.Group className="name">
+        <Form.Group className='name'>
           {/* <Form.Label>Input the Slang</Form.Label> */}
           <Input title={'Input the Slang'} setValue={setWord} />
         </Form.Group>
         <p></p>
-        <Form.Group className="name">
+        <Form.Group className='name'>
           {/* <Form.Label>Meaning of the Slang</Form.Label> */}
           {/* <Form.Control type="slang_meaning" placeholder="excellent, cool." /> */}
           <Input title={'Meaning of the Slang'} setValue={setMeaning} />
         </Form.Group>
         <p></p>
-        <Button variant="primary" onClick={createdictData}>
+        <Button variant='primary' onClick={createdictData}>
           Upload
         </Button>
       </Form>

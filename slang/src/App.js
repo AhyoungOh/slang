@@ -5,25 +5,25 @@ import SignUp from './SignUp';
 //import SignUpPage from './pages/SignUp';
 import SignInPage from './pages/SignIn';
 import ListPage from './pages/List';
-import ButtonPage from './pages/Button';
+import NavigationPage from './pages/NavigationPage';
 import UploadSlangDictPage from './pages/UploadSlangDict';
 import './styles/global-style.scss';
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={ButtonPage} />
+      <Route exact path='/' component={NavigationPage} />
       <Switch>
-        <Route path="/signin">
+        <Route path='/signin'>
           <SignInPage />
         </Route>
-        <Route path="/signup">
+        <Route path='/signup'>
           <SignUp />
         </Route>
-        <Route path="/list">
+        <Route path='/list'>
           <ListPage />
         </Route>
-        <Route path="/creator_login">
+        <Route path='/creator_login'>
           <UploadSlangDictPage />
         </Route>
       </Switch>
