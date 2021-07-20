@@ -10,7 +10,7 @@ function InputMeaningSlang() {
   const [meaning, setMeaning] = useState('');
   const createdictData = async () => {
     // console.log("작성하기 버튼이 클릭됐을 때 ");
-    await axios.post('http://localhost:4000/api/dictionary', {
+    await axios.post(`${process.env.REACT_APP_API_SERVER}/api/dictionary`, {
       word,
       meaning,
     });

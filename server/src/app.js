@@ -4,7 +4,7 @@ const app = express();
 const port = 4000;
 const router = require('./routers');
 // const userRouter = require('./src/middleware/user');
-const { connect: dbConnect } = require('./src/models');
+const { connect: dbConnect } = require('./models');
 
 dbConnect();
 
