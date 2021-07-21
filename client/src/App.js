@@ -5,6 +5,7 @@ import SignInPage from './pages/SignIn';
 import ListPage from './pages/List';
 import Auth from './pages/Auth';
 import ButtonPage from './pages/Button';
+import Header from './components/Header';
 import UploadSlangDictPage from './pages/UploadSlangDict';
 import './styles/global-style.scss';
 import { useReducer, createContext } from 'react';
@@ -39,6 +40,7 @@ function App() {
     <UserContext.Provider value={{ user, dispatch }}>
       <Router>
         <Route exact path='/' component={ButtonPage} />
+        <Header />
         <Switch>
           <Route path='/signin'>
             <SignInPage />
