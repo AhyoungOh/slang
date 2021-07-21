@@ -20,7 +20,7 @@ const validUser = async (req, res, next) => {
   // req.user 에 user정보를 담아 이 미들웨어를 호출한 API에서 싣어준 user 데이터를 사용할 수 있다.
   try {
     const user = await User.findOne({
-      _id: req.session.userID,
+      id: req.session.userID,
     });
     if (!user) {
       return res.status(403).send({

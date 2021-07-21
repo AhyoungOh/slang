@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 4000;
-const router = require('./routers');
-// const userRouter = require('./src/middleware/user');
-const { connect: dbConnect } = require('./models');
+const apiRouter = require('./src/routers');
+
+const userRouter = require('./src/middleware/user');
+const { connect: dbConnect } = require('./src/models');
 
 dbConnect();
 
@@ -31,7 +32,7 @@ app.use(
 );
 app.use(cors());
 
-app.use('/api', router);
+app.use('/api', apiRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

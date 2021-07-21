@@ -11,9 +11,10 @@ router.post('/', async (req, res) => {
     !req.body.id ||
     !req.body.email ||
     !req.body.username ||
-    !req.body.password ||
-    !req.body.creatorGroup ||
-    !req.body.userGroup
+    !req.body.password
+    // !req.body.password ||
+    // !req.body.creatorGroup ||
+    // !req.body.userGroup
   )
     return res.status(400).send({
       message: 'infos are required',

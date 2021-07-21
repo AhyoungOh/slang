@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 function Navigation() {
   return (
     <div className='div'>
-      <Link to='/signup'>
+      <Link to='/auth/signup'>
         <button className='button'>Sign Up</button>
       </Link>
-      <Link to='/signin'>
+      <Link to='/auth/signin'>
         <button className='button'>Sign In</button>
       </Link>
       <Link to='/list'>

@@ -2,11 +2,14 @@
 // import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import SignUp from './SignUp';
-import SignUpPage from './pages/SignUp';
-import SignInPage from './pages/SignIn';
+import AuthPage from './pages/Auth';
+// import SignUpPage from './pages/SignUp';
+// import SignInPage from './pages/SignIn';
 import ListPage from './pages/List';
+// import ButtonPage from './pages/Button';
 import NavigationPage from './pages/NavigationPage';
 import UploadSlangDictPage from './pages/UploadSlangDict';
+import Header from './components/Header';
 import './styles/global-style.scss';
 
 import { useReducer, createContext } from 'react';
@@ -36,14 +39,12 @@ function App() {
   });
   return (
     <UserContext.Provider value={{ user, dispatch }}>
+      <Header />
       <Router>
         <Route exact path='/' component={NavigationPage} />
         <Switch>
-          <Route path='/signin'>
-            <SignInPage />
-          </Route>
-          <Route path='/signup'>
-            <SignUpPage />
+          <Route path='/auth'>
+            <AuthPage />
           </Route>
           <Route path='/list'>
             <ListPage />
@@ -53,7 +54,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* // <InputMeaningSlang /> */}
     </UserContext.Provider>
   );
 }
