@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import Signinup from '../../components/SignIn';
+import Signinup from '../../components/Signinup';
 
 function Auth() {
   return (
