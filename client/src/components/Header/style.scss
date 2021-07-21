@@ -5,7 +5,11 @@
   align-items: center;
 
   height: 60px;
-  background-color: #c4c4c4;
+  background-color: black;
+  > .headerName {
+    font-weight: bolder;
+    font-style: white;
+  }
 
   > .dropdown {
     position: absolute;

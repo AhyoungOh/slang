@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <div className='header'>
-      <div>Slang</div>
+      <div className='headerName'>Slang</div>
       <div class='dropdown'>
         <button
           class='btn btn-secondary dropdown-toggle'
