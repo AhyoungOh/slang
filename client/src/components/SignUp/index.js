@@ -1,12 +1,10 @@
 import './style.scss';
 
-import { useRef, useContext, useState } from 'react';
+import { useRef, useState } from 'react';
 import axios from 'axios';
-import { UserContext } from '../../App';
 import { useHistory } from 'react-router-dom';
 
 function SignUp() {
-  const { dispatch } = useContext(UserContext);
   const history = useHistory();
   const usernameRef = useRef('');
   const passwordRef = useRef('');
@@ -29,11 +27,10 @@ function SignUp() {
           id: idRef.current.value,
         }
       );
-      dispatch({ type: 'signup', payload: userInfo.data.user });
       history.push('/');
       setErrorMsg(null);
     } catch (e) {
-      setErrorMsg(e.response.data.message);
+      setErrorMsg(JSON.stringify(e));
       console.error(e);
     }
   };

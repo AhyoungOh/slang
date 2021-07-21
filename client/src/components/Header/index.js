@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <div className='header'>
-      <div className='headerName'>Slang</div>
+      <div className='headerName'>SLANG STAN</div>
       <div class='dropdown'>
         <button
           class='btn btn-secondary dropdown-toggle'
@@ -23,7 +23,7 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/signin');
+                history.push('/auth/signin');
               }}
             >
               Login
@@ -34,7 +34,7 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/signout');
+                history.push('/auth/signout');
               }}
             >
               Logout
@@ -45,7 +45,7 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/signup');
+                history.push('/auth/signup');
               }}
             >
               Sign up

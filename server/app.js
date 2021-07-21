@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 4000;
+const apiRouter = require('./src/routers');
 
 const userRouter = require('./src/middleware/user');
 const { connect: dbConnect } = require('./src/models');
@@ -39,6 +40,7 @@ app.post('/api/dictionary', async (req, res) => {
   });
   res.send('입력 완료');
 });
+app.use('/api', apiRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

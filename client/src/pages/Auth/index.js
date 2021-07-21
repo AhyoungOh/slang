@@ -1,17 +1,20 @@
-import { Route } from 'react-router-dom';
-import Signinup from '../../components/Signinup';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import SignUp from '../SignUp';
+import SignIn from '../SignIn';
 
 function Auth() {
+  const { url } = useRouteMatch();
+  console.log(url);
   return (
-    <>
-      <Route path='/signin'>
-        <Signinup isSignin />
+    <Switch>
+      <Route path={`${url}/signin`}>
+        <SignIn />
       </Route>
-      <Route path='/auth/signout'>Log out</Route>
-      <Route path='/auth/signup'>
-        <Signinup isSignin={false} />
+      <Route path='/signout'>Log out</Route>
+      <Route path={`${url}/signup`}>
+        <SignUp />
       </Route>
-    </>
+    </Switch>
   );
 }
 
