@@ -23,7 +23,7 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/auth/signin');
+                history.push('/signin');
               }}
             >
               Login
@@ -34,7 +34,7 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/auth/signout');
+                history.push('/signout');
               }}
             >
               Logout
@@ -45,10 +45,10 @@ function Header() {
               class='dropdown-item'
               type='button'
               onClick={() => {
-                history.push('/auth/signup');
+                history.push('/signup');
               }}
             >
-              Sign In
+              Sign up
             </button>
           </li>
         </ul>

@@ -11,20 +11,17 @@ function Signinup({ isSignin }) {
   const clickLoginBtnHandler = async () => {
     if (isSignin) {
       try {
-        const userInfo = await axios.post(
-          'http://localhost:4000/api/auth/login',
-          {
-            username: usernameRef.current.value,
-            password: passwordRef.current.value,
-          }
-        );
+        const userInfo = await axios.post('http://localhost:4000/api/login', {
+          username: usernameRef.current.value,
+          password: passwordRef.current.value,
+        });
         console.log('userInfo : ', userInfo);
       } catch (e) {
         console.error(e);
       }
     } else {
       try {
-        const userInfo = await axios.post('http://localhost:4000/api/auth', {
+        const userInfo = await axios.post('http://localhost:4000/api/', {
           username: usernameRef.current.value,
           password: passwordRef.current.value,
           location: locationRef.current.value,

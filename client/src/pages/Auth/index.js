@@ -4,7 +4,7 @@ import Signinup from '../../components/Signinup';
 function Auth() {
   return (
     <>
-      <Route path='/auth/signin'>
+      <Route path='/signin'>
         <Signinup isSignin />
       </Route>
       <Route path='/auth/signout'>Log out</Route>
