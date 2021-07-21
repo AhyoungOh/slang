@@ -1,5 +1,6 @@
 import './style.scss';
 import { Link } from 'react-router-dom';
+
 function Navigation() {
   return (
     <div className='div'>

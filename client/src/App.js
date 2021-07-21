@@ -14,6 +14,7 @@ import './styles/global-style.scss';
 
 import { useReducer, createContext } from 'react';
 import dotenv from 'dotenv';
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle';
 dotenv.config();
 
 const userReducer = (state, action) => {

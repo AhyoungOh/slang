@@ -1,6 +1,6 @@
 import './style.scss';
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import axios from 'axios';
 
@@ -17,7 +17,7 @@ function Header() {
     }
   };
 
-  const username = user?.username !== '' ? user.username : '';
+  const id = user?.id !== '' ? user.id : '';
 
   return (
     <div className='header'>
@@ -30,15 +30,16 @@ function Header() {
           data-bs-toggle='dropdown'
           aria-expanded='false'
         >
-          {username === '' ? 'Menu' : username}
+          {id === '' ? 'Menu' : id}
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenu2'>
-          {username === '' && (
+          {id === '' && (
             <li>
               <button
                 className='dropdown-item'
                 type='button'
                 onClick={() => {
+                  // console.log(history);
                   history.push('/auth/signin');
                 }}
               >
@@ -46,7 +47,7 @@ function Header() {
               </button>
             </li>
           )}
-          {username !== '' && (
+          {id !== '' && (
             <li>
               <button
                 className='dropdown-item'

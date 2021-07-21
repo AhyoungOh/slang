@@ -32,8 +32,9 @@ function SignUp() {
         }
       );
       dispatch({ type: 'signin', payload: userInfo.data.user });
-      history.push('/');
+
       setErrorMsg(null);
+      history.push('/');
     } catch (e) {
       // setErrorMsg(e.response.data.message);
       setErrorMsg(JSON.stringify(e));
