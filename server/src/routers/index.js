@@ -1,11 +1,11 @@
+import dictionary from '../models/dictionary';
 const express = require('express');
-const router = express.Router();
-// const boardRouter = require('./board');
-// const categoryRouter = require('./category');
-const authRouter = require('./auth');
 
-// router.use('/board', boardRouter);
-// router.use('/category', categoryRouter);
+const router = express.Router();
+const authRouter = require('./auth');
+const authDictionary = require('./dictionary');
+
 router.use('/auth', authRouter);
+router.use('/dictionary', authDictionary);
 
 module.exports = router;
