@@ -24,16 +24,19 @@ function SignUp() {
           username: usernameRef.current.value,
           password: passwordRef.current.value,
           email: emailRef.current.value,
-          creatorGroup: creatorGroupRef.current.value,
-          userGroup: userGroupRef.current.value,
+          // creatorGroup: creatorGroupRef.current.value,
+          // userGroup: userGroupRef.current.value,
+          creatorGroup: true,
+          userGroup: false,
           id: idRef.current.value,
         }
       );
-      dispatch({ type: 'signup', payload: userInfo.data.user });
-      history.push('/');
+      dispatch({ type: 'signin', payload: userInfo.data.user });
+
       setErrorMsg(null);
+      history.push('/');
     } catch (e) {
-      setErrorMsg(e.response.data.message);
+      setErrorMsg(JSON.stringify(e));
       console.error(e);
     }
   };
