@@ -4,7 +4,6 @@ import SignIn from '../SignIn';
 
 function Auth() {
   const { url } = useRouteMatch();
-  console.log(url);
   return (
     <Switch>
       <Route path={`${url}/signin`}>

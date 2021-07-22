@@ -40,8 +40,8 @@ function App() {
   });
   return (
     <UserContext.Provider value={{ user, dispatch }}>
-      <Header />
       <Router>
+        <Header />
         <Route exact path='/' component={NavigationPage} />
         <Switch>
           <Route path='/auth'>

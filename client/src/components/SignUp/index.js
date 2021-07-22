@@ -36,7 +36,6 @@ function SignUp() {
       setErrorMsg(null);
       history.push('/');
     } catch (e) {
-      // setErrorMsg(e.response.data.message);
       setErrorMsg(JSON.stringify(e));
       console.error(e);
     }

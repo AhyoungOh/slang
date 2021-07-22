@@ -39,7 +39,6 @@ function Header() {
                 className='dropdown-item'
                 type='button'
                 onClick={() => {
-                  // console.log(history);
                   history.push('/auth/signin');
                 }}
               >
