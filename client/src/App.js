@@ -8,6 +8,7 @@ import ListPage from './pages/List';
 import NavigationPage from './pages/NavigationPage';
 import UploadSlangDictPage from './pages/UploadSlangDict';
 import Header from './components/Header';
+import Checkup from './components/Checkup';
 import './styles/global-style.scss';
 
 import { useReducer, createContext } from 'react';
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path='/creator_login'>
             <UploadSlangDictPage />
+          </Route>
+          <Route path='/checkup'>
+            <Checkup />
           </Route>
         </Switch>
       </Router>
