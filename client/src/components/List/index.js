@@ -1,21 +1,13 @@
 import './style.scss';
 import React, { useState } from 'react';
 import axios from 'axios';
+import InputMeaningSlang from '../InputMeaningSlang';
 import { useHistory } from 'react-router-dom';
 
 function List({ data, setVisible, fetchData }) {
   const [word, setWord] = useState(data?.word || '');
   const [meaning, setMeaning] = useState(data?.meaning || '');
   const history = useHistory();
-
-  const createData = async () => {
-    await axios.post(`${process.env.REACT_APP_API_SERVER}/list`, {
-      word,
-      meaning,
-    });
-    setVisible(false);
-    fetchData();
-  };
 
   const updateData = async () => {
     await axios.put(`${process.env.REACT_APP_API_SERVER}/list`, {
@@ -36,23 +28,27 @@ function List({ data, setVisible, fetchData }) {
   };
 
   if (data === null) {
+    return <InputMeaningSlang> {(data, word, meaning)}</InputMeaningSlang>;
+  } else {
     return (
       <div className='slang-list'>
         <div class='d-grid gap-2 col-6 mx-auto'>
           <button
-            class='btn btn-primary'
+            class='btn btn-secondary'
             type='button'
             data-bs-toggle='modal'
             data-bs-target='#exampleModal'
           >
-            Slang1
+            Slang
           </button>
         </div>
         <div class='modal' id='exampleModal' tabindex='-1'>
           <div class='modal-dialog'>
             <div class='modal-content'>
               <div class='modal-header'>
-                <h5 class='modal-title'>Modal title</h5>
+                <h5 class='modal-title'>
+                  <div class='title'>Edit the slang</div>
+                </h5>
                 <button
                   type='button'
                   class='btn-close'
@@ -61,18 +57,39 @@ function List({ data, setVisible, fetchData }) {
                 ></button>
               </div>
               <div class='modal-body'>
-                <p>Modal body text goes here.</p>
+                <div class='input-group'>
+                  <span class='input-group-text'>Slang and meaning</span>
+                  <input
+                    type='text'
+                    aria-label='slang'
+                    class='form-control'
+                    title={'slang'}
+                    value={word}
+                    // setValue={setTitle}
+                  />
+                  <input
+                    type='text'
+                    aria-label='meaning'
+                    class='form-control'
+                    title={'meaning'}
+                    value={meaning}
+                  />
+                </div>
               </div>
               <div class='modal-footer'>
                 <button
                   type='button'
                   class='btn btn-secondary'
-                  data-bs-dismiss='modal'
+                  onClick={updateData}
                 >
-                  Close
-                </button>
-                <button type='button' class='btn btn-primary'>
                   Save changes
+                </button>
+                <button
+                  type='button'
+                  class='btn btn-secondary'
+                  onClick={deleteData}
+                >
+                  Delete
                 </button>
               </div>
             </div>
@@ -80,8 +97,6 @@ function List({ data, setVisible, fetchData }) {
         </div>
       </div>
     );
-  } else {
-    return;
   }
 }
 

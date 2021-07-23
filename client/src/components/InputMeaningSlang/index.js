@@ -5,11 +5,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
-function InputMeaningSlang() {
-  const [word, setWord] = useState('');
-  const [meaning, setMeaning] = useState('');
+function InputMeaningSlang({ data, setVisible, fetchData }) {
+  const [word, setWord] = useState(data.word || '');
+  const [meaning, setMeaning] = useState(data.meaning || '');
   const createdictData = async () => {
-    // console.log("작성하기 버튼이 클릭됐을 때 ");
     await axios.post(`${process.env.REACT_APP_API_SERVER}/api/dictionary`, {
       word,
       meaning,

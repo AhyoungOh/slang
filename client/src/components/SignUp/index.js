@@ -87,7 +87,7 @@ function SignUp() {
                   autocomplete='off'
                   ref={creatorGroupRef}
                 />
-                <label class='btn btn-outline-primary' for='btnradio1'>
+                <label class='btn btn-outline-secondary' for='btnradio1'>
                   Are you a creator group?
                 </label>
 
@@ -99,7 +99,7 @@ function SignUp() {
                   autocomplete='off'
                   ref={userGroupRef}
                 />
-                <label class='btn btn-outline-primary' for='btnradio3'>
+                <label class='btn btn-outline-secondary' for='btnradio3'>
                   Are you a user group?
                 </label>
               </div>
@@ -131,7 +131,7 @@ function SignUp() {
 
             {/* <!-- Submit --> */}
             <button
-              class='btn btn-block btn-primary'
+              class='btn btn-block btn-secondary'
               type='button'
               onClick={clickBtnHandler}
             >
