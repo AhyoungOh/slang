@@ -16,6 +16,9 @@ function Navigation() {
       <Link to='/creator_login'>
         <button className='button'>Upload Slang Dictionary</button>
       </Link>
+      <Link to='/checkup'>
+        <button className='button'>Checkup</button>
+      </Link>
     </div>
   );
 }
