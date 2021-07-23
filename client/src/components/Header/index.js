@@ -21,7 +21,14 @@ function Header() {
 
   return (
     <div className='header'>
-      <div className='headerName'>SLANG STAN</div>
+      <div
+        className='headerName'
+        onClick={() => {
+          history.push('/');
+        }}
+      >
+        SLANG STAN
+      </div>
       <div className='dropdown'>
         <button
           className='btn btn-secondary dropdown-toggle'

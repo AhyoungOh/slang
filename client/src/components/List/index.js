@@ -1,9 +1,42 @@
 import './style.scss';
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
-function List() {
-  return (
-    <>
+function List({ data, setVisible, fetchData }) {
+  const [word, setWord] = useState(data?.word || '');
+  const [meaning, setMeaning] = useState(data?.meaning || '');
+  const history = useHistory();
+
+  const createData = async () => {
+    await axios.post(`${process.env.REACT_APP_API_SERVER}/list`, {
+      word,
+      meaning,
+    });
+    setVisible(false);
+    fetchData();
+  };
+
+  const updateData = async () => {
+    await axios.put(`${process.env.REACT_APP_API_SERVER}/list`, {
+      _id: data._id,
+      word,
+      meaning,
+    });
+    setVisible(false);
+    fetchData();
+    history.push('/');
+  };
+
+  const deleteData = async () => {
+    await axios.delete(`${process.env.REACT_APP_API_SERVER}/list/${data._id}`);
+    setVisible(false);
+    fetchData();
+    history.push('/');
+  };
+
+  if (data === null) {
+    return (
       <div className='slang-list'>
         <div class='d-grid gap-2 col-6 mx-auto'>
           <button
@@ -13,15 +46,6 @@ function List() {
             data-bs-target='#exampleModal'
           >
             Slang1
-          </button>
-
-          <button
-            class='btn btn-success'
-            type='button'
-            data-bs-toggle='modal'
-            data-bs-target='#exampleModal'
-          >
-            Slang2
           </button>
         </div>
         <div class='modal' id='exampleModal' tabindex='-1'>
@@ -55,8 +79,10 @@ function List() {
           </div>
         </div>
       </div>
-    </>
-  );
+    );
+  } else {
+    return;
+  }
 }
 
 export default List;

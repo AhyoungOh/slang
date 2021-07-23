@@ -73,33 +73,39 @@ function SignUp() {
             </div>
             <p></p>
 
-            <div class='form-check'>
-              <input
-                class='form-check-input'
-                type='checkbox'
-                value=''
-                id='creator_group'
-                ref={creatorGroupRef}
-              />
-              <label class='form-check-label' for='creator_group'>
-                Are you a creator group?
-              </label>
+            <div className='button-position'>
+              <div
+                class='btn-group btn-group-lg'
+                role='group'
+                aria-label='Basic radio toggle button group'
+              >
+                <input
+                  type='radio'
+                  class='btn-check'
+                  name='btnradio'
+                  id='btnradio1'
+                  autocomplete='off'
+                  ref={creatorGroupRef}
+                />
+                <label class='btn btn-outline-primary' for='btnradio1'>
+                  Are you a creator group?
+                </label>
+
+                <input
+                  type='radio'
+                  class='btn-check'
+                  name='btnradio'
+                  id='btnradio3'
+                  autocomplete='off'
+                  ref={userGroupRef}
+                />
+                <label class='btn btn-outline-primary' for='btnradio3'>
+                  Are you a user group?
+                </label>
+              </div>
             </div>
 
-            <div class='form-check'>
-              <input
-                class='form-check-input'
-                type='checkbox'
-                value=''
-                id='user_group'
-                ref={userGroupRef}
-              />
-              <label class='form-check-label' for='user_group'>
-                Are you a user group?
-              </label>
-            </div>
             <p></p>
-
             <div class='form-group'>
               <label for='id'>ID</label>
               <input
