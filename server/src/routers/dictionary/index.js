@@ -1,5 +1,5 @@
-import express from 'express';
-import mongoose from 'mongoose';
+const express = require('express');
+const mongoose = require('mongoose');
 
 const Dictionary = require('../../models/dictionary');
 
@@ -147,4 +147,4 @@ router.get('/', (req, res) => {
     });
 });
 
-export default router;
+module.exports = router;

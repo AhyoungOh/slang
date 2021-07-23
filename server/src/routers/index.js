@@ -1,4 +1,4 @@
-import dictionary from '../models/dictionary';
+// import dictionary from '../models/dictionary';
 const express = require('express');
 
 const router = express.Router();

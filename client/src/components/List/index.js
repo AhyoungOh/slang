@@ -15,14 +15,14 @@ function List({ data, setVisible, fetchData }) {
       word,
       meaning,
     });
-    setVisible(false);
+    // setVisible(false);
     fetchData();
     history.push('/');
   };
 
   const deleteData = async () => {
     await axios.delete(`${process.env.REACT_APP_API_SERVER}/list/${data._id}`);
-    setVisible(false);
+    // setVisible(false);
     fetchData();
     history.push('/');
   };
