@@ -13,6 +13,9 @@ const dictionarySchema = new Schema({
   //   edited: { type: Data, default: Date.now },
   // },
   is_edited: { type: Boolean, default: false },
+  userIds: {
+    type: Array,
+  },
 });
 
 module.exports = model('dictionary', dictionarySchema);

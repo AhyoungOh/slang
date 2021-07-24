@@ -125,4 +125,19 @@ router.delete('/', validUser, async (req, res) => {
   }
 });
 
+router.put('/checkup', validUser, async (req, res) => {
+  const slangId = req.body.slangId;
+  const userId = req.user._id;
+  const correctAnswerIds = req.user.correctAnswerIds;
+  try {
+    await User.updateOne(
+      { _id: userId },
+      { correctAnswerIds: [...correctAnswerIds, slangId] }
+    );
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(500);
+  }
+});
+
 module.exports = router;
