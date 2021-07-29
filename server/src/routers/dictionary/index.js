@@ -1,8 +1,10 @@
-import express from 'express';
-import mongoose from 'mongoose';
+const express = require('express');
+const mongoose = require('mongoose');
 
 const Dictionary = require('../../models/dictionary');
 
+const { validUser } = require('../../middleware/user');
+const { findOne } = require('../../models/dictionary');
 const router = express.Router();
 
 // WRITE
@@ -147,4 +149,20 @@ router.get('/', (req, res) => {
     });
 });
 
-export default router;
+router.put('/user', validUser, async (req, res) => {
+  const { slangId } = req.body;
+  const userId = req.user._id;
+  try {
+    const slang = await Dictionary.findOne({ _id: slangId });
+    const correctUserIds = slang.correctUserIds;
+    await Dictionary.updateOne(
+      { _id: slangId },
+      { correctUserIds: [...correctUserIds, userId] }
+    );
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(500);
+  }
+});
+
+module.exports = router;

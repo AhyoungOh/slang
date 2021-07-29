@@ -1,5 +1,6 @@
 import './style.scss';
 import { Link } from 'react-router-dom';
+import Sider from '../Sider';
 
 function Navigation() {
   return (
@@ -10,15 +11,16 @@ function Navigation() {
       <Link to='/auth/signin'>
         <button className='button'>Sign In</button>
       </Link>
-      <Link to='/list'>
+      {/* <Link to='/list'>
         <button className='button'>Go to List</button>
-      </Link>
+      </Link> */}
       <Link to='/creator_login'>
         <button className='button'>Upload Slang Dictionary</button>
       </Link>
-      <Link to='/checkup'>
+      {/* <Link to='/checkup'>
         <button className='button'>Checkup</button>
-      </Link>
+      </Link> */}
+      <Sider />
     </div>
   );
 }

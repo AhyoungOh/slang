@@ -3,6 +3,7 @@ import { useRef, useContext, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../../App';
 import { useHistory } from 'react-router-dom';
+import Sider from '../Sider';
 
 function SignIn() {
   const { dispatch } = useContext(UserContext);
@@ -65,6 +66,7 @@ function SignIn() {
           Sign in
         </button>
       </form>
+      <Sider />
     </div>
   );
 }

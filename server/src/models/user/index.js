@@ -8,6 +8,7 @@ const userSchema = new Schema({
   userGroup: Boolean,
   id: String,
   password: String,
+  correctAnswerIds: Array,
 });
 
 // userSchema에 저장되기 전에 실행되는 로직

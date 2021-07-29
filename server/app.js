@@ -33,7 +33,6 @@ app.use(
 app.use(cors());
 
 app.use('/api', apiRouter);
-
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
