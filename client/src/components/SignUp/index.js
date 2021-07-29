@@ -1,5 +1,5 @@
 import './style.scss';
-
+import Sider from '../Sider';
 import { useRef, useContext, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../../App';
@@ -146,6 +146,7 @@ function SignUp() {
           </div>
         </div>
       </div>
+      <Sider />
     </section>
   );
 }

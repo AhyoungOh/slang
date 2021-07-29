@@ -1,6 +1,7 @@
 import './style.scss';
 import React, { useState } from 'react';
 import axios from 'axios';
+import Sider from '../Sider';
 import useApiCall from '../../hooks/useApiCall';
 import { useHistory } from 'react-router-dom';
 
@@ -115,6 +116,7 @@ function List({ data }) {
           </div>
         </div>
       </div>
+      <Sider />
     </div>
   );
 }

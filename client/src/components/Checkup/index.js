@@ -1,6 +1,7 @@
 import './style.scss';
 import useApiCall from '../../hooks/useApiCall';
 import axios from 'axios';
+import Sider from '../Sider';
 
 function Checkup() {
   const [loading, testData, error, fetchData] = useApiCall(
@@ -44,6 +45,7 @@ function Checkup() {
           </button>
         </div>
       </div>
+      <Sider />
     </div>
   );
 }
