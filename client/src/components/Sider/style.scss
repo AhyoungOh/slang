@@ -10,6 +10,9 @@
   top: 1%;
   left: 1%;
 }
-.offcanvas {
-  background-color: black;
+.offcanvas.sidebar {
+  background-color: white;
+}
+.list-group > a {
+  text-decoration: none;
 }

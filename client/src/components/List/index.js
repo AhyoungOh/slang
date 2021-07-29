@@ -48,21 +48,21 @@ function List({ data }) {
   };
 
   const dataList = testData.map((wordData) => {
-    return <div>{wordData.word}</div>;
+    return (
+      <button
+        class='btn btn-secondary'
+        type='button'
+        data-bs-toggle='modal'
+        data-bs-target='#exampleModal'
+      >
+        {wordData.word}
+      </button>
+    );
   });
   console.log('testdata', testData);
   return (
     <div className='slang-list'>
-      <div class='d-grid gap-2 col-6 mx-auto'>
-        <button
-          class='btn btn-secondary'
-          type='button'
-          data-bs-toggle='modal'
-          data-bs-target='#exampleModal'
-        >
-          {dataList}
-        </button>
-      </div>
+      <div class='d-grid gap-2 col-6 mx-auto'>{dataList}</div>
       <div class='modal' id='exampleModal' tabindex='-1'>
         <div class='modal-dialog'>
           <div class='modal-content'>

@@ -15,7 +15,7 @@ function Sider() {
         <box-icon name='menu'></box-icon>
       </a>
       <div
-        class='offcanvas offcanvas-start'
+        class='offcanvas offcanvas-start sidebar'
         tabindex='-1'
         id='offcanvasExample'
         aria-labelledby='offcanvasExampleLabel'
@@ -36,27 +36,27 @@ function Sider() {
           <p></p>
           <div class='list-group'>
             <Link to='/'>
-              <div class='list-group-item list-group-item-action'>
+              <div class='list-group-item list-group-item-action d-flex align-items-center'>
                 <box-icon name='home'></box-icon>Home
               </div>
             </Link>
-            <li class='list-group-item list-group-item-action'>
+            <li class='list-group-item list-group-item-action d-flex align-items-center'>
               <box-icon name='user-pin'></box-icon>My Page
             </li>
             <Link to='/list'>
-              <li class='list-group-item list-group-item-action'>
+              <li class='list-group-item list-group-item-action d-flex align-items-center'>
                 <box-icon name='happy-heart-eyes'></box-icon>View Slangs
               </li>
             </Link>
-            <li class='list-group-item list-group-item-action'>
+            <li class='list-group-item list-group-item-action d-flex align-items-center'>
               <box-icon name='add-to-queue'></box-icon>Update Slangs
             </li>
             <Link to='/checkup'>
-              <li class='list-group-item list-group-item-action'>
+              <li class='list-group-item list-group-item-action d-flex align-items-center'>
                 <box-icon name='message-alt-check'></box-icon>Chekup
               </li>
             </Link>
-            <li class='list-group-item list-group-item-action'>
+            <li class='list-group-item list-group-item-action d-flex align-items-center'>
               <box-icon name='pie-chart-alt-2'></box-icon>Analysis
             </li>
           </div>
