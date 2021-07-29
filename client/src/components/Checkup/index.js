@@ -1,52 +1,24 @@
 import './style.scss';
-
+import useApiCall from '../../hooks/useApiCall';
 import axios from 'axios';
 
 function Checkup() {
-  // const [payload, setPayload] = useState('');
-  // const [error, setError] = useState('');
-  // const [loading, setLoading] = useState('');
-  const payload = [
-    {
-      _id: 'abc',
-      word: 'testword111',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-    {
-      _id: 'abc',
-      word: 'testword222',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-    {
-      _id: 'abc',
-      word: 'testword333',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-    {
-      _id: 'abc',
-      word: 'testword444',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-    {
-      _id: 'abc',
-      word: 'testword555',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-    {
-      _id: 'abc',
-      word: 'testword666',
-      meaning: 'testmeaning',
-      correctUserIds: ['testuserIds'],
-    },
-  ];
-  const randomIdx = Math.floor(Math.random() * payload.length);
+  const [loading, testData, error, fetchData] = useApiCall(
+    `${process.env.REACT_APP_API_SERVER}/api/dictionary`
+  );
+  if (testData === null) {
+    return <></>;
+  }
+  if (loading === true) {
+    return <div>loading</div>;
+  }
+  if (error !== null) {
+    return <div>Error</div>;
+  }
+  console.log('testdata', testData);
+  const randomIdx = Math.floor(Math.random() * testData.length);
   // console.log('randomidx', randomIdx);
-  const randomslang = payload[randomIdx];
+  const randomslang = testData[randomIdx];
   return (
     <div class='container mt-sm-5 my-1'>
       <div class='question ml-sm-5 pl-sm-5 pt-2'>
