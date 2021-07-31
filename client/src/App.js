@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import SignUp from './SignUp';
 import AuthPage from './pages/Auth';
+// import SignUpPage from './pages/SignUp';
+// import SignInPage from './pages/SignIn';
 import ListPage from './pages/List';
+// import ButtonPage from './pages/Button';
 import NavigationPage from './pages/NavigationPage';
 import UploadSlangDictPage from './pages/UploadSlangDict';
 import Header from './components/Header';
@@ -45,7 +49,7 @@ function App() {
           <Route path='/list'>
             <ListPage />
           </Route>
-          <Route path='/creator_login'>
+          <Route path='/dictionary'>
             <UploadSlangDictPage />
           </Route>
           <Route path='/checkup'>
