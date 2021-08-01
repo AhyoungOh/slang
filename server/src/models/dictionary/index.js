@@ -7,6 +7,9 @@ const dictionarySchema = new Schema({
   meaning: {
     type: String,
   },
+  writer: {
+    type: String,
+  },
   // is_edited: { type: Boolean, default: false },
   userIds: {
     type: Array,

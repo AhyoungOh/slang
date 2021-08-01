@@ -4,7 +4,6 @@ import axios from 'axios';
 import Sider from '../Sider';
 import useApiCall from '../../hooks/useApiCall';
 import { useHistory } from 'react-router-dom';
-import InputMeaningSlang from '../InputMeaningSlang';
 import { Link } from 'react-router-dom';
 
 function List({ data }) {
@@ -52,11 +51,21 @@ function List({ data }) {
       </button>
     );
   });
+
+  const moveToUpdatePage = () => {
+    history.push('./update');
+  };
   return (
     <div className='slang-list'>
       <div class='d-grid gap-2 col-6 mx-auto'>{dataList}</div>
-      <Link to='/dictionary'>
-        <button className='button'>Plus</button>
+      <Link to='./update'>
+        <button
+          class='btn btn-primary'
+          type='button'
+          // onClick={moveToUpdatePage}
+        >
+          Plus
+        </button>
       </Link>
       <div class='modal' id='exampleModal' tabindex='-1'>
         <div class='modal-dialog'>

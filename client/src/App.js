@@ -49,7 +49,7 @@ function App() {
           <Route path='/list'>
             <ListPage />
           </Route>
-          <Route path='/dictionary'>
+          <Route path='/update'>
             <UploadSlangDictPage />
           </Route>
           <Route path='/checkup'>
