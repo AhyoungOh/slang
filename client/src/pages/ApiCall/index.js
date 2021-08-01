@@ -9,7 +9,9 @@ function ApiCall() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:4000/api/board');
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_SERVER}/api/board`
+      );
       setLoading(false);
       setPayload(response.data);
     } catch (error) {

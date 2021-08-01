@@ -1,11 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 4000;
+const port = 80;
 const apiRouter = require('./src/routers');
 
 const userRouter = require('./src/middleware/user');
 const { connect: dbConnect } = require('./src/models');
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.use(express.static('public'));
 
 dbConnect();
 
