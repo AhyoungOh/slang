@@ -14,9 +14,9 @@ function Navigation() {
       {/* <Link to='/list'>
         <button className='button'>Go to List</button>
       </Link> */}
-      <Link to='/creator_login'>
+      {/* <Link to='/dictionary'>
         <button className='button'>Upload Slang Dictionary</button>
-      </Link>
+      </Link> */}
       {/* <Link to='/checkup'>
         <button className='button'>Checkup</button>
       </Link> */}

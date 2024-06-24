@@ -4,6 +4,8 @@ import axios from 'axios';
 import Sider from '../Sider';
 import useApiCall from '../../hooks/useApiCall';
 import { useHistory } from 'react-router-dom';
+import InputMeaningSlang from '../InputMeaningSlang';
+import { Link } from 'react-router-dom';
 
 function List({ data }) {
   const [word, setWord] = useState(data?.word || '');
@@ -21,15 +23,6 @@ function List({ data }) {
   if (error !== null) {
     return <div>Error</div>;
   }
-
-  const createData = async () => {
-    await axios.post(`${process.env.REACT_APP_API_SERVER}/list`, {
-      _id: data._id,
-      word,
-      meaning,
-    });
-    fetchData();
-  };
 
   const updateData = async () => {
     await axios.put(`${process.env.REACT_APP_API_SERVER}/list`, {
@@ -59,10 +52,12 @@ function List({ data }) {
       </button>
     );
   });
-  console.log('testdata', testData);
   return (
     <div className='slang-list'>
       <div class='d-grid gap-2 col-6 mx-auto'>{dataList}</div>
+      <Link to='/dictionary'>
+        <button className='button'>Plus</button>
+      </Link>
       <div class='modal' id='exampleModal' tabindex='-1'>
         <div class='modal-dialog'>
           <div class='modal-content'>
